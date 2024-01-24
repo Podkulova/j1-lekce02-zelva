@@ -19,10 +19,10 @@ public class HlavniProgram {
     nakresliNozky();
     nakreslihlavu();
     nakresliOcasek();
-
+    /* ----> vytvor tvary <----*/
     nakresliViceuhelnik();
     nakresliViceuhelnik2();
-    nakresliViceuhelnik3();
+    nakresliSlunicko();
   }
 
   /* ---------------------------------------------------- > Prasatko <---------------------------------------------------- */
@@ -103,15 +103,44 @@ public class HlavniProgram {
     zofka.move(200);
   }
 
-  public void nakresliViceuhelnik3() {
+  public void nakresliSlunicko() {
     zofka.penDown();
     for (int i = 0; i < 24; i++) {
       zofka.turnRight(15.0);
       zofka.move(20);
     }
-    zofka.penUp();
-    zofka.move(200);
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+    nakresliPaprsek();
+
   }
+
+  public void nakresliPaprsek() {
+    zofka.turnLeft(90.0);
+    zofka.move(60);
+
+    zofka.penUp();
+    zofka.turnLeft(180.0);
+    zofka.move(60);
+    zofka.turnLeft(90.0);
+
+    for (int i = 0; i < 2; i++) {
+      zofka.turnRight(15.0);
+      zofka.move(20);
+    }
+    zofka.penDown();
+  }
+
+
 
 
 
