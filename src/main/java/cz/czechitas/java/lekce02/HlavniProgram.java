@@ -15,13 +15,16 @@ public class HlavniProgram {
     //TODO tady bude kód
 
     /* ----> vytvor prasatko <----*/
-    prasatko();
+    nakresliPrasatko();
     nakresliNozky();
-    hlava();
-    ocasek();
+    nakreslihlavu();
+    nakresliOcasek();
+
+    nakresliViceuhelnik();
   }
 
-  public  void prasatko() {
+  /* ---------------------------------------------------- > Prasatko <---------------------------------------------------- */
+  public  void nakresliPrasatko() {
     zofka.turnLeft(90.0);
     for (int i = 0; i < 2; i++) {
       zofka.move(120.0);
@@ -31,7 +34,7 @@ public class HlavniProgram {
     }
   }
 
-  public void hlava() {
+  public void nakreslihlavu() {
     zofka.turnRight(30.0);
     zofka.move(60);
     zofka.turnRight(120);
@@ -63,7 +66,7 @@ public class HlavniProgram {
     zofka.move(20.0);
     zofka.turnLeft(45.0);
   }
-  public void ocasek() {
+  public void  nakresliOcasek() {
     zofka.penUp();
     zofka.turnRight(30.0);
     zofka.move(120);
@@ -73,7 +76,19 @@ public class HlavniProgram {
     zofka.penDown();
     zofka.move(20);
     zofka.penUp();
-    zofka.turnLeft(90);
+    zofka.move(200);
   }
+  /* ---------------------------------------------------- > Obrazce <---------------------------------------------------- */
+
+  public void nakresliViceuhelnik() {
+    zofka.penDown();
+    for (int i = 0; i < 8; i++) {
+      zofka.turnRight(45.0);
+      zofka.move(60);
+    }
+  }
+
+
+
 
 }
