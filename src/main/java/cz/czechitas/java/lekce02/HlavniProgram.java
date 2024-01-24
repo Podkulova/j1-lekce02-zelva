@@ -21,6 +21,8 @@ public class HlavniProgram {
     nakresliOcasek();
 
     nakresliViceuhelnik();
+    nakresliViceuhelnik2();
+    nakresliViceuhelnik3();
   }
 
   /* ---------------------------------------------------- > Prasatko <---------------------------------------------------- */
@@ -86,7 +88,31 @@ public class HlavniProgram {
       zofka.turnRight(45.0);
       zofka.move(60);
     }
+    zofka.penUp();
+    zofka.move(200);
   }
+
+  public void nakresliViceuhelnik2() {
+    zofka.penDown();
+    for (int i = 0; i < 8; i++) {
+      zofka.turnRight(60.0);
+      zofka.move(80);
+    }
+    zofka.penUp();
+    zofka.turnLeft(120.0);
+    zofka.move(200);
+  }
+
+  public void nakresliViceuhelnik3() {
+    zofka.penDown();
+    for (int i = 0; i < 24; i++) {
+      zofka.turnRight(15.0);
+      zofka.move(20);
+    }
+    zofka.penUp();
+    zofka.move(200);
+  }
+
 
 
 
