@@ -51,7 +51,7 @@ public class HlavniProgramChlivek {
         pismenoD();
         pismenoA();
         pismenoS();
-        pismenoA();
+        //  pismenoA();
     }
 
 
@@ -143,7 +143,7 @@ public class HlavniProgramChlivek {
         zofka.penDown();
     }
 
-    public void nakresliSpodniDomecek(){
+    public void nakresliSpodniDomecek() {
         // zovka jde na pozici - horní pravý roh
         zofka.penUp();
         zofka.turnLeft(120);
@@ -151,10 +151,10 @@ public class HlavniProgramChlivek {
         zofka.turnRight(90);
 
         //zovka půjde na dolni pozici - pod domky
-          zofka.move(320);
-         zofka.turnRight(90);
-         domecek();
-         strecha();
+        zofka.move(320);
+        zofka.turnRight(90);
+        domecek();
+        strecha();
     }
 
     public void nakresliPrasatkoAPosun() {
@@ -186,7 +186,7 @@ public class HlavniProgramChlivek {
         zofka.move(30.0);
         zofka.turnRight(180.0);
         zofka.move(30.0);
-       zofka.turnRight(40.0);
+        zofka.turnRight(40.0);
         //zadní pár
         zofka.move(140);
 
@@ -228,7 +228,7 @@ public class HlavniProgramChlivek {
         zofka.move(110);
         zofka.turnRight(90);
 
-        for(int i = 0;i <8 ; i++){
+        for (int i = 0; i < 8; i++) {
             zofka.turnRight(20.0);
             zofka.move(20);
         }
@@ -246,18 +246,39 @@ public class HlavniProgramChlivek {
         zofka.turnRight(130);
         zofka.move(110);
         zofka.turnLeft(180);
-     //   zofka.move(110); //120
+        //   trojuhelnik
+        zofka.move(50);
+        zofka.turnLeft(65);
         zofka.move(50);
         zofka.turnLeft(65);
         zofka.move(50);
 
-
-       /* zofka.turnRight(30);
-        zofka.move(120);*/
+        zofka.turnLeft(155);
     }
 
     public void pismenoS() {
+        zofka.penUp();
 
-    }
+        zofka.move(300);
+        zofka.turnLeft(120);
+
+        zofka.penDown();
+        // Horní část písmena "S"
+        zofka.turnRight(30.0);
+        zofka.move(40);
+        zofka.turnLeft(90.0);
+        zofka.move(40);
+        zofka.turnLeft(30.0);
+
+
+    // Přechod na dolní část písmena "S"
+
+        zofka.move(40);
+        zofka.turnLeft(60.0);
+        zofka.move(80);
+        zofka.turnRight(50.0);
+        zofka.move(40);
+}
+
 
 }
