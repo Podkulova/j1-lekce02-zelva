@@ -47,6 +47,11 @@ public class HlavniProgramChlivek {
         NakresliOcasek();
 
         NakresliDruhyDomekDole();
+
+        pismenoD();
+        pismenoA();
+        pismenoS();
+        pismenoA();
     }
 
 
@@ -215,6 +220,43 @@ public class HlavniProgramChlivek {
     }
 
     public void pismenoD() {
+        zofka.penUp();
+        zofka.turnLeft(30);
+        zofka.move(360);
+        zofka.penDown();
+        zofka.turnLeft(180);
+        zofka.move(110);
+        zofka.turnRight(90);
+
+        for(int i = 0;i <8 ; i++){
+            zofka.turnRight(20.0);
+            zofka.move(20);
+        }
+    }
+
+    public void pismenoA() {
+        zofka.penUp();
+        zofka.turnLeft(160);
+        zofka.move(100);
+
+        zofka.penDown();
+
+        zofka.turnLeft(65);
+        zofka.move(110);
+        zofka.turnRight(130);
+        zofka.move(110);
+        zofka.turnLeft(180);
+     //   zofka.move(110); //120
+        zofka.move(50);
+        zofka.turnLeft(65);
+        zofka.move(50);
+
+
+       /* zofka.turnRight(30);
+        zofka.move(120);*/
+    }
+
+    public void pismenoS() {
 
     }
 
