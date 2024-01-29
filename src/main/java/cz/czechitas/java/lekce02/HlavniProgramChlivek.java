@@ -13,45 +13,29 @@ public class HlavniProgramChlivek {
         zofka = new Turtle();
 
         //TODO tady bude kód
+        zofka.penUp();
+        zofka.move(40);
         zofka.turnLeft(90);
         zofka.penUp();
         zofka.move(390);
 
-        domecek();
-        strecha();
+        celyDum();
 
-        slunicko();
-        nakresliSlunicko();
-        posunDSlunceAPosunomkuDoPrava();
+        celeSlunce();
 
-        domecek();
-        strecha();
-        posunDomkuDoPrava();
+        celyDum();
 
-        domecek();
-        strecha();
-
-        posunDomkuDoPrava();
-        domecek();
-        strecha();
-
-        posunDomkuDoPrava();
-        domecek();
-        strecha();
+        TriDomky();
 
         nakresliSpodniDomecek();
 
-        nakresliPrasatkoAPosun();
-        nakresliHlavuPrasatku();
-        nakresliNozkyPrasatku();
-        NakresliOcasek();
+        celePrasatko();
 
         NakresliDruhyDomekDole();
 
-        pismenoD();
-        pismenoA();
-        pismenoS();
-        //  pismenoA();
+         celeJmeno();
+
+         zofkaJdiDomu();
     }
 
 
@@ -73,6 +57,11 @@ public class HlavniProgramChlivek {
         zofka.move(100);
     }
 
+    public void celyDum() {
+        domecek();
+        strecha();
+    }
+
     public void posunDSlunceAPosunomkuDoPrava() {
         zofka.penUp();
 
@@ -81,13 +70,9 @@ public class HlavniProgramChlivek {
             zofka.move(10);
         }
 
-        // zofka.turnRight(90);
-        //  zofka.move(60);
-        // zofka.turnRight(90);
-        //   zofka.turnLeft( 180);
-        zofka.move(210); //240
+        zofka.move(190); //210
         zofka.turnLeft(90);
-        zofka.move(120); //140
+        zofka.move(120);
         zofka.turnLeft(180);
     }
 
@@ -98,12 +83,23 @@ public class HlavniProgramChlivek {
         zofka.turnRight(180);
     }
 
+    public void celeTriDomky() {
+        posunDomkuDoPrava();
+        celyDum();
+    }
+
+    public void TriDomky() {
+        celeTriDomky();
+        celeTriDomky();
+        celeTriDomky();
+    }
+
     public void slunicko() {
         zofka.penUp();
         zofka.turnLeft(120);
         zofka.move(120);
         zofka.turnLeft(90);
-        zofka.move(220);
+        zofka.move(200); //220
     }
 
     public void nakresliSlunicko() {
@@ -124,7 +120,6 @@ public class HlavniProgramChlivek {
         nakresliPaprsek();
         nakresliPaprsek();
         nakresliPaprsek();
-
     }
 
     public void nakresliPaprsek() {
@@ -143,6 +138,12 @@ public class HlavniProgramChlivek {
         zofka.penDown();
     }
 
+    public void celeSlunce() {
+        slunicko();
+        nakresliSlunicko();
+        posunDSlunceAPosunomkuDoPrava();
+    }
+
     public void nakresliSpodniDomecek() {
         // zovka jde na pozici - horní pravý roh
         zofka.penUp();
@@ -151,7 +152,7 @@ public class HlavniProgramChlivek {
         zofka.turnRight(90);
 
         //zovka půjde na dolni pozici - pod domky
-        zofka.move(320);
+        zofka.move(300);
         zofka.turnRight(90);
         domecek();
         strecha();
@@ -207,11 +208,18 @@ public class HlavniProgramChlivek {
         zofka.move(30);
     }
 
+    public void celePrasatko() {
+        nakresliPrasatkoAPosun();
+        nakresliHlavuPrasatku();
+        nakresliNozkyPrasatku();
+        NakresliOcasek();
+    }
+
     public void NakresliDruhyDomekDole() {
         zofka.penUp();
         zofka.move(400);
         zofka.turnLeft(90);
-        zofka.move(70);
+        zofka.move(80); //70
         zofka.turnLeft(90);
         zofka.move(860);
 
@@ -222,7 +230,7 @@ public class HlavniProgramChlivek {
     public void pismenoD() {
         zofka.penUp();
         zofka.turnLeft(30);
-        zofka.move(360);
+        zofka.move(340);
         zofka.penDown();
         zofka.turnLeft(180);
         zofka.move(110);
@@ -231,54 +239,115 @@ public class HlavniProgramChlivek {
         for (int i = 0; i < 8; i++) {
             zofka.turnRight(20.0);
             zofka.move(20);
+
         }
     }
 
-    public void pismenoA() {
+    public void pomocnacaraNaPismena() {
         zofka.penUp();
         zofka.turnLeft(160);
-        zofka.move(100);
+        zofka.move(500);
+        zofka.turnRight(180);
+        zofka.move(500);
+        zofka.turnRight(90);
+        zofka.move(115);
+        zofka.turnRight(90);
+        zofka.move(500);
+        zofka.turnRight(180);
+        zofka.move(500);
+        zofka.turnLeft(90);
+        zofka.move(115);
+        zofka.turnLeft(90);
+    }
 
+    public void pismenoA() {
+        zofka.move(120);
         zofka.penDown();
 
+        //   trojuhelnik
         zofka.turnLeft(65);
-        zofka.move(110);
+        zofka.move(120);
         zofka.turnRight(130);
-        zofka.move(110);
+        zofka.move(120);
         zofka.turnLeft(180);
         //   trojuhelnik
         zofka.move(50);
         zofka.turnLeft(65);
-        zofka.move(50);
+        zofka.move(60); //50
         zofka.turnLeft(65);
         zofka.move(50);
 
-        zofka.turnLeft(155);
+        zofka.penUp();
+        zofka.turnLeft(135); //130
     }
 
     public void pismenoS() {
-        zofka.penUp();
+        zofka.move(270);
 
-        zofka.move(300);
-        zofka.turnLeft(120);
-
-        zofka.penDown();
-        // Horní část písmena "S"
-        zofka.turnRight(30.0);
-        zofka.move(40);
         zofka.turnLeft(90.0);
+        zofka.move(20);
+        zofka.penDown();
+        posun40x20Left();
+        posun30x20Left();
+        posun40x20Left();
+        posun40x20Left();
+        posun30x20Left();
+        zofka.turnLeft(40.0);
         zofka.move(40);
+
+        posun40x20Right();
+        posun40x20Right();
+        posun30x20Right();
+        posun40x20Right();
+        posun30x20Right();
+    }
+    public void posunKpismenuA() {
+        zofka.penUp();
+        zofka.move(-14);
+        zofka.turnLeft(210);
+        zofka.move(10);
+    }
+
+    public void posun40x20Right() {
+        zofka.turnRight(40.0);
+        zofka.move(20);
+    }
+
+    public void posun40x20Left() {
+        zofka.turnLeft(40.0);
+        zofka.move(20);
+    }
+
+    public void posun30x20Right() {
+        zofka.turnRight(30.0);
+        zofka.move(20);
+    }
+
+    public void posun30x20Left() {
         zofka.turnLeft(30.0);
+        zofka.move(20);
+    }
 
+    public void celeJmeno() {
+        pismenoD();
+        pomocnacaraNaPismena();
+        pismenoA();
+        pismenoS();
+        posunKpismenuA();
+        pismenoA();
+    }
 
-    // Přechod na dolní část písmena "S"
-
+    public void zofkaJdiDomu() {
+        zofka.turnLeft(80);
+        zofka.move(450);
+        zofka.turnLeft(90);
+        zofka.move(280);
+        zofka.turnRight(100);
+        zofka.move(130);
+        zofka.turnLeft(90);
         zofka.move(40);
-        zofka.turnLeft(60.0);
-        zofka.move(80);
-        zofka.turnRight(50.0);
-        zofka.move(40);
-}
-
+        zofka.turnRight(90);
+        zofka.move(20);
+    }
 
 }
